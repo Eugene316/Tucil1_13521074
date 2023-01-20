@@ -60,6 +60,7 @@ void input_cards(int * cards) {
 void random_cards(int * cards) {
     srand(time(NULL));
     int random;
+    cout << "Kartu terpilih:" << endl;
     for (int i = 0; i < 4; i++) {
         random = rand() % 13 + 1;
         switch (random) {
@@ -85,4 +86,5 @@ void random_cards(int * cards) {
                 break;
         }
     }
+    cout << endl;
 }
