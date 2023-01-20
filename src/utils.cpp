@@ -9,7 +9,7 @@ void start_timer() {
 
 /* displays time elapsed since last checkpoint */
 void stop_timer() {
-    cout << (double)(clock() - checkpoint) / CLOCKS_PER_SEC;
+    cout << (double)(clock() - checkpoint) / CLOCKS_PER_SEC << " detik";
 }
 
 /* get card value (1-10) of input string */
@@ -41,7 +41,7 @@ int card_value(string input) {
 
 /* input 4 cards by user */
 void input_cards(int * cards) {
-    cout << "Input 4 cards! e.g. A 2 10 Q" << endl;
+    cout << "Masukkan nilai keempat kartu! cth. A 2 10 Q" << endl;
     string inputs[4];
     do {
         cin >> inputs[0] >> inputs[1] >> inputs[2] >> inputs[3];
@@ -51,7 +51,7 @@ void input_cards(int * cards) {
         }
         
         if (cards[0] == -1 || cards[1] == -1 || cards[2] == -1 || cards[3] == -1) {
-            cout << "Invalid input!" << endl;
+            cout << "Masukan tidak sesuai!" << endl;
         }
     } while (cards[0] == -1 || cards[1] == -1 || cards[2] == -1 || cards[3] == -1);
 }
