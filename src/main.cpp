@@ -28,6 +28,7 @@ int main() {
         random_cards(card_inputs);
     }
 
+    /* chore: permute cards*/
 
     v_expr perms;   /* perm: abcd */
     for (int i = 0; i < 4; i++) {
@@ -46,6 +47,8 @@ int main() {
 
     display_solut();
     cout << "Banyak solusi: " << solutions.size() << endl;
+
+    /* chore: save to file */
 
     return 0;
 }
