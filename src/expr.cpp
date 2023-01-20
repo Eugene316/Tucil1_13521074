@@ -17,24 +17,35 @@ void display_expr (expr var) {
 /* returns expr result, result = e1 <op> e2 */
 expr evaluate (expr e1, char op, expr e2) {
     expr result;
-    switch (op) {
-        case '+': {
-            result.first = e1.first + e2.first;
-            break;
+    if (e1.second == "~" || e2.second == "~") {
+        result.first = 0;
+        result.second = "~";
+    } else {
+        switch (op) {
+            case '+': {
+                result.first = e1.first + e2.first;
+                break;
+            }
+            case '-': {
+                result.first = e1.first - e2.first;
+                break;
+            }
+            case '*': {
+                result.first = e1.first * e2.first;
+                break;
+            }
+            case '/': {
+                if (e2.first == 0) {
+                    result.first = 0;
+                    result.second = "~";
+                    return result;
+                } else {
+                    result.first = e1.first / e2.first;
+                }
+                break;
+            }
         }
-        case '-': {
-            result.first = e1.first - e2.first;
-            break;
-        }
-        case '*': {
-            result.first = e1.first * e2.first;
-            break;
-        }
-        case '/': {
-            result.first = e1.first / e2.first;
-            break;
-        }
+        result.second = '(' + e1.second + op + e2.second + ')';
     }
-    result.second = '(' + e1.second + op + e2.second + ')';
     return result;
 }
