@@ -1,7 +1,7 @@
 #include "expr.h"
 
-/* return expr type from long type */
-expr create_expr (long number) {
+/* return expr type from int type */
+expr create_expr (int number) {
     expr result;
     result.first = number;
     result.second = to_string(number);
