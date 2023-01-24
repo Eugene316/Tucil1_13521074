@@ -3,6 +3,8 @@
 
 #include "expr.h"
 #include <vector>
+#include <fstream>
+#include <string>
 using namespace std;
 
 typedef vector<expr> v_expr;
