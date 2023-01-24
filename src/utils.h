@@ -24,4 +24,7 @@ void input_cards(int * cards);
 /* randomize 4 cards */
 void random_cards(int * cards);
 
+/* get cards from value */
+string value_to_card(int value);
+
 #endif

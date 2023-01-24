@@ -95,3 +95,31 @@ void random_cards(int * cards) {
     }
     cout << endl;
 }
+
+/* get cards from value */
+string value_to_card(int value) {
+    string result;
+    switch (value) {
+        case 1: {
+            result = "A";
+            break;
+        }
+        case 11: {
+            result = "J";
+            break;
+        }
+        case 12: {
+            result = "Q";
+            break;
+        }
+        case 13: {
+            result = "K";
+            break;
+        }
+        default: {
+            result = to_string(value);
+            break;
+        }
+    }
+    return result;
+}
