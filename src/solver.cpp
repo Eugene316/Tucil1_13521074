@@ -32,7 +32,7 @@ void solve(v_expr perm) {
                 save_solut(evaluate(evaluate(evaluate(perm[0], op1, perm[1]), op2, perm[2]), op3, perm[3]));    /* ((a o b) o c) o d */
                 save_solut(evaluate(evaluate(perm[0], op1, evaluate(perm[1], op2, perm[2])), op3, perm[3]));    /* (a o (b o c)) o d */
                 save_solut(evaluate(perm[0], op1, evaluate(evaluate(perm[1], op2, perm[2]), op3, perm[3])));    /* a o ((b o c) o d) */
-                save_solut(evaluate(perm[0], op1, evaluate(perm[1], op2, evaluate(perm[2], op3, perm[3]))));    /* a o ((b o c) o d) */
+                save_solut(evaluate(perm[0], op1, evaluate(perm[1], op2, evaluate(perm[2], op3, perm[3]))));    /* a o (b o (c o d)) */
             }
         }
     }
