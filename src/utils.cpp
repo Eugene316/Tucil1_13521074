@@ -76,15 +76,15 @@ void random_cards(int * cards) {
                 cout << "A ";
                 break;
             } case 11: {
-                cards[i] = 10;
+                cards[i] = 11;
                 cout << "J ";
                 break;
             } case 12: {
-                cards[i] = 10;
+                cards[i] = 12;
                 cout << "Q ";
                 break;
             } case 13: {
-                cards[i] = 10;
+                cards[i] = 13;
                 cout << "K ";
                 break;
             } default:
