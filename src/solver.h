@@ -2,6 +2,7 @@
 #define SOLVER
 
 #include "expr.h"
+#include "utils.h"
 #include <vector>
 #include <fstream>
 #include <string>
@@ -23,6 +24,6 @@ void display_solut();
 void solve(v_expr perm);
 
 /* saves solutions of 24 card game to a .txt file */
-void save_to_file();
+void save_to_file(int * cards, double search_time);
 
 #endif

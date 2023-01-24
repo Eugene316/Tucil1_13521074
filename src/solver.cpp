@@ -40,13 +40,27 @@ void solve(v_expr perm) {
 }
 
 /* saves solutions of 24 card game to a .txt file */
-void save_to_file() {
+void save_to_file(int * cards, double search_time) {
     ofstream solver;
     string filename = "../test/24game.txt";
 
     solver.open(filename);
-    for (int i = 0; i < solutions.size(); i++) {
-        solver << solutions[i].second << endl;
+
+    solver << "Kartu terpilih: ";
+    for (int i = 0; i < 4; i++) {
+        solver << value_to_card(cards[i]) << " ";
     }
+    solver << endl << endl;
     
+    solver << "Solusi: " << endl;
+    if (solutions.size() == 0) {
+        solver << "Tidak ada solusi" << endl;
+    } else {
+        solver << "Banyak solusi: " << solutions.size() << endl;
+        for (int i = 0; i < solutions.size(); i++) {
+            solver << solutions[i].second << endl;
+        }
+    }
+    solver << "Waktu pencarian: " << search_time << " detik" << endl;
+    solver.close();
 }

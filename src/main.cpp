@@ -40,14 +40,13 @@ int main() {
     cout << "\nSolusi:" << endl;
 
     start_timer();
-    // solve(perms);
     for (int i = 0; i < 4; i++) {       /* permutation loop */
         for (int j = 0; j < 4; j++) {
             for (int k = 0; k < 4; k++) {
                 for (int l = 0; l < 4; l++) {
                     if (i != j && i != k && i != l && j != k && j != l && k != l) {     /* process if i,j,k,l indices are unique */
-                        curr_perm = to_string(card_inputs[i]) + to_string(card_inputs[j]) + to_string(card_inputs[k]) + to_string(card_inputs[l]);
-
+                        curr_perm = value_to_card(card_inputs[i]) + value_to_card(card_inputs[j]) + value_to_card(card_inputs[k]) + value_to_card(card_inputs[l]);
+                        
                         is_new_perm = true;         /* check if permutation is previously processed */
                         for (int a = 0; a < processed.size(); a++) {
                             if (curr_perm == processed[a]) {
@@ -79,12 +78,28 @@ int main() {
     if (total_solut > 0) {
         cout << "Banyak solusi: " << total_solut << endl;
         display_solut();
-        /* chore: save to file */
+        
     } else {
         cout << "Tidak ada solusi" << endl;
     }
 
     cout << "Waktu pencarian: " << recorded_time << " detik" << endl;
+
+
+    cout << "Apakah ingin menyimpan solusi? (y/n)" << endl;
+    do
+    {
+        cin >> choice;
+        if (choice != "y" && choice != "n") {
+            cout << "Masukan salah!" << endl;
+        }
+    } while (choice != "y" && choice != "n");
+
+    if (choice == "y") {
+        save_to_file(card_inputs, recorded_time);
+        cout << "File telah disimpan pada folder test" << endl;
+    }
+
     
 
     return 0;
