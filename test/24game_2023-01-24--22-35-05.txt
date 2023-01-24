@@ -1,0 +1,5 @@
+Kartu terpilih: 10 8 9 5 
+
+Solusi: 
+Tidak ada solusi
+Waktu pencarian: 0.056 detik
