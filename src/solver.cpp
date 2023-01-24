@@ -47,10 +47,13 @@ void save_to_file(int * cards, double search_time) {
     char filename[100];
     time(&curr_time);
     curr_tm = localtime(&curr_time);
-    strftime(filename, 100, "../test/24game_%Y-%m-%d--%H-%M-%S.txt", curr_tm);
+    strftime(filename, 100, "24game_%Y-%m-%d--%H-%M-%S.txt", curr_tm);
     
+    string path(filename);
+    path.insert(0, "../test/");
+
     ofstream solver;
-    solver.open(filename);
+    solver.open(path);
 
     solver << "Kartu terpilih: ";
     for (int i = 0; i < 4; i++) {
