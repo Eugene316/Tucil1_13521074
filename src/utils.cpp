@@ -1,15 +1,16 @@
 #include "utils.h"
 
 clock_t checkpoint;
+double recorded_time;
 
 /* records current clock */
 void start_timer() {
     checkpoint = clock();
 }
 
-/* displays time elapsed since last checkpoint */
+/* saves time elapsed since last checkpoint */
 void stop_timer() {
-    cout << (double)(clock() - checkpoint) / CLOCKS_PER_SEC << " detik";
+    recorded_time = (double)(clock() - checkpoint) / CLOCKS_PER_SEC;
 }
 
 /* get card value (1-10) of input string */

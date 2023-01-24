@@ -7,11 +7,12 @@
 using namespace std;
 
 extern clock_t checkpoint;
+extern double recorded_time;
 
 /* records current clock */
 void start_timer();
 
-/* displays time elapsed since last checkpoint */
+/* saves time elapsed since last checkpoint */
 void stop_timer();
 
 /* get card value (1-10) of input string */
