@@ -41,9 +41,15 @@ void solve(v_expr perm) {
 
 /* saves solutions of 24 card game to a .txt file */
 void save_to_file(int * cards, double search_time) {
+    /* set filename with date--time as serial */
+    time_t curr_time;
+    tm * curr_tm;
+    char filename[100];
+    time(&curr_time);
+    curr_tm = localtime(&curr_time);
+    strftime(filename, 100, "../test/24game_%Y-%m-%d--%H-%M-%S.txt", curr_tm);
+    
     ofstream solver;
-    string filename = "../test/24game.txt";
-
     solver.open(filename);
 
     solver << "Kartu terpilih: ";

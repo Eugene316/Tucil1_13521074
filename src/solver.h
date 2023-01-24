@@ -5,6 +5,7 @@
 #include "utils.h"
 #include <vector>
 #include <fstream>
+#include <ctime>
 #include <string>
 using namespace std;
 
