@@ -97,6 +97,5 @@ int main() {
 
     if (choice == "y") {
         save_to_file(card_inputs, recorded_time);
-        cout << "File telah disimpan pada folder test" << endl;
     }
 }

@@ -69,4 +69,7 @@ void save_to_file(int * cards, double search_time) {
     }
     solver << "Waktu pencarian: " << search_time << " detik" << endl;
     solver.close();
+
+    cout << "File telah disimpan pada folder test (" << filename << ")" << endl;
+
 }
