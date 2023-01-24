@@ -17,8 +17,14 @@ void stop_timer() {
 int card_value(string input) {
     if (input == "A") {
         return 1;
-    } else if (input == "10" || input == "J" || input == "Q" || input == "K") {
+    } else if (input == "10") {
         return 10;
+    } else if (input == "J") {
+        return 11;
+    } else if (input == "Q") {
+        return 12;
+    } else if (input == "K") {
+        return 13;
     } else if (input == "2") {
         return 2;
     } else if (input == "3") {
