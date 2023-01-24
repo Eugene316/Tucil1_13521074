@@ -45,7 +45,7 @@ expr evaluate (expr e1, char op, expr e2) {
                 break;
             }
         }
-        result.second = '(' + e1.second + op + e2.second + ')';
+        result.second = "( " + e1.second + ' ' + op + ' ' + e2.second + " )";
     }
     return result;
 }
