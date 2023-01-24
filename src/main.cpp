@@ -99,19 +99,4 @@ int main() {
         save_to_file(card_inputs, recorded_time);
         cout << "File telah disimpan pada folder test" << endl;
     }
-
-    cout << endl << "Apakah ingin memasukkan kartu lain? (y/n)" << endl;
-    do
-    {
-        cin >> choice;
-        if (choice != "y" && choice != "n") {
-            cout << "Masukan salah!" << endl;
-        }
-    } while (choice != "y" && choice != "n");
-
-    if (choice == "y") {
-        main();
-    } else {
-        return 0;
-    }
 }
