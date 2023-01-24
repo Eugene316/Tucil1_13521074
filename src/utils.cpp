@@ -70,28 +70,8 @@ void random_cards(int * cards) {
     cout << "Kartu terpilih:" << endl;
     for (int i = 0; i < 4; i++) {
         random = rand() % 13 + 1;
-        switch (random) {
-            case 1: {
-                cards[i] = 1;
-                cout << "A ";
-                break;
-            } case 11: {
-                cards[i] = 11;
-                cout << "J ";
-                break;
-            } case 12: {
-                cards[i] = 12;
-                cout << "Q ";
-                break;
-            } case 13: {
-                cards[i] = 13;
-                cout << "K ";
-                break;
-            } default:
-                cards[i] = random;
-                cout << to_string(random) + ' ';
-                break;
-        }
+        cards[i] = random;
+        cout << value_to_card(random) + " ";
     }
     cout << endl;
 }
